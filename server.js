@@ -1,9 +1,11 @@
 require('dotenv').config()
 const express = require("express");
 const cors = require("cors");
+const Router = require('express-group-router');
 const database = require('./src/config/database')
 
 const app = express();
+const router = new Router();
 const APP_PORT = process.env.APP_PORT || 8000;
 
 database.connect()
@@ -13,23 +15,21 @@ var corsOptions = {
     methods: "GET,PUT,PATCH,POST,DELETE",
     optionsSuccessStatus: 200
 };
-
 app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
 app.use(express.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Headers", "Authorization, Origin, Content-Type, Accept");
+  next();
+});
 
-// simple route
 app.get("/", (req, res) => {
     res.json({ message: "Hello World." });
 });
+require('./src/config/routes')(router)
+let listRoutes = router.init();
+app.use(listRoutes);
 
-require('./src/config/routes')(app)
-
-// set port, listen for requests
 app.listen(APP_PORT, () => {
     console.log(`Server is running on port ${APP_PORT}.`);
 });
