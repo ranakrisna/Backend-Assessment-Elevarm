@@ -12,7 +12,7 @@ var RoleSchema = new Schema({
         trim: true,
         required: true
     }
-});
+}, { versionKey: false });
 
 const Role = mongoose.model('Role', RoleSchema);
 module.exports = Role;

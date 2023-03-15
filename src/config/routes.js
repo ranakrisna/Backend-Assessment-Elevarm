@@ -15,7 +15,8 @@ module.exports = function(router) {
       routes.get('/:id', [verifyToken, isAdmin], UserController.getUserById);
       routes.post('/', [verifyToken, isAdmin, checkDuplicateUsernameOrEmail, checkRolesExisted], UserController.saveUser);
       routes.put('/:id', [verifyToken, isAdmin, checkDuplicateUsernameOrEmail, checkRolesExisted], UserController.updateUser);
-      routes.delete('/:id', [verifyToken, isAdmin], UserController.deleteUser);
+      routes.patch('/:id', [verifyToken, isAdmin], UserController.deleteUser);
+      routes.delete('/force/:id', [verifyToken, isAdmin], UserController.forceDeleteUser);
     })
   });
 };
