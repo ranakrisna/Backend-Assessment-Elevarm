@@ -13,7 +13,6 @@ exports.signup = async (req, res) => {
     password: bcrypt.hashSync(req.body.password, 8)
   });
   var roles = req.body.roles
-
   if (!roles) {
     roles = [constant.USER_ROLE]
   }

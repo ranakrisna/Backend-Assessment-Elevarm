@@ -6,13 +6,16 @@ const AuthController = require("./../application/controller/auth");
 
 
 module.exports = function(router) {
-  router.group("/api/v1/", (route) => {
-    route.post("signup", [checkDuplicateUsernameOrEmail, checkRolesExisted], AuthController.signup);
-    route.post("signin", AuthController.signin);
+  router.group("/api/v1", (route) => {
+    route.post("/signup", [checkDuplicateUsernameOrEmail, checkRolesExisted], AuthController.signup);
+    route.post("/signin", AuthController.signin);
 
-    route.get("/public", UserController.publicBoard);
-    route.get("/user", [verifyToken], UserController.userBoard);
-    route.get("/driver",[verifyToken, isDriver],UserController.driverBoard);
-    route.get("/admin", [verifyToken, isAdmin], UserController.adminBoard);
+    route.group("/users", (routes) => {
+      routes.get('/', [verifyToken, isAdmin], UserController.getUsers);
+      routes.get('/:id', [verifyToken, isAdmin], UserController.getUserById);
+      routes.post('/', [verifyToken, isAdmin, checkDuplicateUsernameOrEmail, checkRolesExisted], UserController.saveUser);
+      routes.put('/:id', [verifyToken, isAdmin, checkDuplicateUsernameOrEmail, checkRolesExisted], UserController.updateUser);
+      routes.delete('/:id', [verifyToken, isAdmin], UserController.deleteUser);
+    })
   });
 };

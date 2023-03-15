@@ -2,13 +2,16 @@ const User = require('./../model/user');
 const constant = require('./../../config/constant');
 
 checkDuplicateUsernameOrEmail = async (req, res, next) => {
-  // Username
-  const model = await User.findOne({
+  var where = {
     $or: [
       { username: req.body.username },
       { email: req.body.email }
     ]
-  }).exec();
+  }
+  if(typeof req.params.id !== 'undefined'){
+    where["$nor"] = [{_id: req.params.id}]
+  }
+  const model = await User.findOne(where).exec()
   if (model) {
     res.status(400).send({ message: "Failed! Username/Email is already in use!" });
     return;
