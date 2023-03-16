@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/ranakrisna/Backend-Assessment-Elevarm#readme",
   "dependencies": {
+    "@elevarm/user-modules": "file:./src/modules/user",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

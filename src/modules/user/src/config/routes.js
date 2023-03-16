@@ -1,6 +1,3 @@
-const express = require('express')
-const router = express.Router()
-
 const { verifyToken, isDriver, isAdmin } = require("./../application/middleware/auth");
 const { checkDuplicateUsernameOrEmail, checkRolesExisted } = require("./../application/middleware/user");
 const UserController = require("./../application/controller/user");
