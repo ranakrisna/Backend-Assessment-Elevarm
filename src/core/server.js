@@ -27,7 +27,7 @@ app.use(function(req, res, next) {
 app.get("/", (req, res) => {
     res.json({ message: "Hello World." });
 });
-require('@elevarm/user-modules/src/config/routes')(router)
+require("@elevarm/user-modules/src/config/routes")(router)
 let listRoutes = router.init();
 app.use(listRoutes);
 

@@ -9,7 +9,7 @@
       "version": "0.0.0",
       "dependencies": {
         "@rush-temp/application": "file:./projects/application.tgz",
-        "@rush-temp/user": "file:./projects/user.tgz",
+        "@rush-temp/user-modules": "file:./projects/user-modules.tgz",
         "bcrypt": "^5.1.0",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
@@ -72,10 +72,10 @@
         "winston": "^3.8.2"
       }
     },
-    "node_modules/@rush-temp/user": {
+    "node_modules/@rush-temp/user-modules": {
       "version": "0.0.0",
-      "resolved": "file:projects/user.tgz",
-      "integrity": "sha512-soqmYswGMCZ6jHgz6N3Ec8UNT7EoElfqWPVvzSXxe9oduHk6bzxYzrF61nsBr1/fkDj0OPnEoXRDxzayeHQkTw==",
+      "resolved": "file:projects/user-modules.tgz",
+      "integrity": "sha512-jzEuQhMJDoky2d6MBbx+jh4hDFOaGieiwetTwaTZnUg7QwNeZrVHs8mLzyxAm/4NEHfKV+7l9XW8F6TDCWRE4g==",
       "dependencies": {
         "bcrypt": "^5.1.0",
         "cors": "^2.8.5",
@@ -84,7 +84,6 @@
         "express-group-router": "^2.1.0",
         "jsonwebtoken": "^9.0.0",
         "mongoose": "^7.0.1",
-        "nodemon": "^2.0.21",
         "winston": "^3.8.2"
       }
     },
