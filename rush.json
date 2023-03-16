@@ -24,7 +24,7 @@
       "projectFolder": "src/core"
     },
     {
-      "packageName": "@elevarm/user",
+      "packageName": "@elevarm/user-modules",
       "projectFolder": "src/modules/user"
     }
   ]

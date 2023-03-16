@@ -3,6 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const database = require('./src/config/database')
 
+const Router = require('express-group-router');
+const router = new Router();
+
 const app = express();
 const APP_PORT = process.env.APP_PORT || 8000;
 
@@ -24,6 +27,9 @@ app.use(function(req, res, next) {
 app.get("/", (req, res) => {
     res.json({ message: "Hello World." });
 });
+require('@elevarm/user-modules/src/config/routes')(router)
+let listRoutes = router.init();
+app.use(listRoutes);
 
 app.listen(APP_PORT, () => {
     console.log(`Server is running on port ${APP_PORT}.`);
