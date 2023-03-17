@@ -5,6 +5,9 @@ const AuthController = require("./../application/controller/auth");
 
 
 module.exports = function(router) {
+  router.get("/user", (req, res) => {
+      res.json({ message: "Hello World From User Modules." });
+  });
   router.group("/api/v1", (route) => {
     route.post("/signup", [checkDuplicateUsernameOrEmail, checkRolesExisted], AuthController.signup);
     route.post("/signin", AuthController.signin);

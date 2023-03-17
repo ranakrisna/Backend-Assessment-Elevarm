@@ -7,22 +7,22 @@ importers:
 
   ../../src/core:
     specifiers:
+      '@elevarm/user-modules': file:./../modules/user
       cors: ^2.8.5
       dotenv: ^16.0.3
       express: ^4.18.2
       express-group-router: ^2.1.0
       mongoose: ^7.0.1
       nodemon: ^2.0.21
-      typescript: ^5.0.2
       winston: ^3.8.2
     dependencies:
+      '@elevarm/user-modules': file:../../src/modules/user
       cors: 2.8.5
       dotenv: 16.0.3
       express: 4.18.2
       express-group-router: 2.1.0
       mongoose: 7.0.2
       nodemon: 2.0.21
-      typescript: 5.0.2
       winston: 3.8.2
 
   ../../src/modules/user:
@@ -1274,12 +1274,6 @@ packages:
       mime-types: 2.1.35
     dev: false
 
-  /typescript/5.0.2:
-    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
-    engines: {node: '>=12.20'}
-    hasBin: true
-    dev: false
-
   /undefsafe/2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
     dev: false
@@ -1375,4 +1369,17 @@ packages:
 
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+    dev: false
+
+  file:../../src/modules/user:
+    resolution: {directory: ../../src/modules/user, type: directory}
+    name: '@elevarm/user-modules'
+    version: 1.0.0
+    dependencies:
+      bcrypt: 5.1.0
+      dotenv: 16.0.3
+      jsonwebtoken: 9.0.0
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
     dev: false
