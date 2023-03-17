@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@elevarm/user-modules': link:../modules/user
+
+dependencies:
+  '@elevarm/user-modules': link:../modules/user

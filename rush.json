@@ -1,10 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
   "rushVersion": "5.93.2",
-  "npmVersion": "9.6.1",
+  "pnpmVersion": "7.29.3",
   "nodeSupportedVersionRange": ">=16",
+  "projectFolderMinDepth": 2,
+  "projectFolderMaxDepth": 3,
   "gitPolicy": {},
-  "repository": {},
+  "repository": {
+    "url": "git+https://github.com/ranakrisna/Backend-Assessment-Elevarm.git",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
+  },
   "eventHooks": {
     "preRushInstall": [],
     "postRushInstall": [],
@@ -12,5 +18,14 @@
     "postRushBuild": []
   },
   "variants": [],
-  "projects": []
+  "projects": [
+    {
+      "packageName": "@elevarm/application",
+      "projectFolder": "src/core"
+    },
+    {
+      "packageName": "@elevarm/user-modules",
+      "projectFolder": "src/modules/user"
+    }
+  ]
 }

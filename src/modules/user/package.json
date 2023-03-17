@@ -1,0 +1,29 @@
+{
+  "name": "@elevarm/user-modules",
+  "description": "User Module",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"User Modules Build\"",
+    "build:watch": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranakrisna/Backend-Assessment-Elevarm.git"
+  },
+  "author": {
+    "name": "Rana Krisna",
+    "email": "ranakrisna17031995@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ranakrisna/Backend-Assessment-Elevarm/issues"
+  },
+  "homepage": "https://github.com/ranakrisna/Backend-Assessment-Elevarm#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
