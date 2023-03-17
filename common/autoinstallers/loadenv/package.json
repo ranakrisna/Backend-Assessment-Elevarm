@@ -1,0 +1,8 @@
+{
+  "name": "loadenv",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}

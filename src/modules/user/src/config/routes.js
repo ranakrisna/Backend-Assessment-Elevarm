@@ -1,4 +1,4 @@
-const { verifyToken, isDriver, isAdmin } = require("./../application/middleware/auth");
+const { verifyToken, isAdmin } = require("./../application/middleware/auth");
 const { checkDuplicateUsernameOrEmail, checkRolesExisted } = require("./../application/middleware/user");
 const UserController = require("./../application/controller/user");
 const AuthController = require("./../application/controller/auth");

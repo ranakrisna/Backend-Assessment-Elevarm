@@ -1,0 +1,11 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush-plugins.schema.json",
+    "plugins": [
+        {
+            "packageName": "@elevarm/loadenv",
+            "pluginName": "loadenv",
+            "autoinstallerName": "rush-plugins",
+            "entryPoint": "./lib/loadenv.js"
+        }
+    ]
+}
