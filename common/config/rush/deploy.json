@@ -1,0 +1,11 @@
+
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/deploy-scenario.schema.json",
+    "deploymentProjectNames": ["@elevarm/application"],
+    "projectSettings": [
+      {
+        "projectName": "@elevarm/application"
+      }
+    ]
+  }
+  

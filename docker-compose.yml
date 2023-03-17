@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  elevarm:
+    container_name: elevarm-application
+    build: .
+    ports:
+      - "3010:3010"
+    volumes:
+      - elevarm_volume:/app
+    environment:
+      - APP_PORT=3010
+      - MONGODB_URI=mongodb://root:password@mongodb:27027
+      - MONGODB_DATABASE=elevarm
+      - APP_SECRET=UkS6L6Ko7n1LC0vUeINS
+    command: sh -c "cd /app/common/deploy/src/core/ && rushx build --verbose"
+    depends_on:
+      - mongodb
+    networks:
+      - elevarm
+  mongodb:
+    container_name: elevarm-mongodb
+    image: mongo:latest
+    command: mongod --port 27027
+    ports:
+      - "27027:27027"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    networks:
+      - elevarm
+networks:
+  elevarm:
+    driver: bridge
+volumes:
+  elevarm_volume:
