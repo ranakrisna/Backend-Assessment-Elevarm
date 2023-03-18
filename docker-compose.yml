@@ -9,9 +9,9 @@ services:
       - elevarm_volume:/app
     environment:
       - APP_PORT=3010
-      - MONGODB_URI=mongodb://root:password@mongodb:27027
-      - MONGODB_DATABASE=elevarm
       - APP_SECRET=UkS6L6Ko7n1LC0vUeINS
+      - MONGODB_DATABASE=elevarm
+      - MONGODB_URI=mongodb://root:password@mongodb:27027
     command: sh -c "cd /app/common/deploy/src/core/ && rushx build --verbose"
     depends_on:
       - mongodb

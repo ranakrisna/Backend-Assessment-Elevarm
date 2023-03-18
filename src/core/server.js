@@ -7,7 +7,7 @@ const Router = require('express-group-router');
 const router = new Router();
 
 const app = express();
-const APP_PORT = process.env.APP_PORT || 8000;
+const APP_PORT = process.env.APP_PORT || 3010;
 
 database.connect()
 
